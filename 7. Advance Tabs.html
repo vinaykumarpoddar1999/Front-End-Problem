@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Animated Tab JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #E3F2FD;
+    }
+    .container{
+      width: 50%;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius:6px;
+      box-shadow: 5px #ccc;
+      background-color: rgb(245, 183, 242);
+    }
+    h1{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px;
+    }
+    .buttonContainer{
+      display: flex;
+      position:relative;
+      border-bottom: 2px solid #ccc;
+      padding: 10px;
+      gap:15px;
+      margin-top: 0px;
+    }
+    .line{
+      height:5px;
+      background-color: blueviolet;
+      width: 90px;
+      position: absolute;
+      top:50px;
+      left:15px;
+      transition: all 0.3s ease-in-out;
+    }
+    .content{
+      display: none;
+    }
+    .content.active{
+      display: block;
+    }
+    .tabButton{
+      border: none;
+      padding: 15px 30px;
+      background: white;
+      padding-bottom: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+    .tabButton.active{
+      <!-- background-color: rgb(51, 113, 248); -->
+
+    }
+  </style>
+  <h1>Animated Tabs by Vinay Kumar Poddar</h1>
+  <div class="container">
+    <div class="buttonContainer">
+      <button class="tabButton active">Home </button>
+      <button class="tabButton">About</button>
+      <button class="tabButton">Contact</button>
+      <button class="tabButton">Services</button>
+<div class="line"></div>
+<br>
+    </div>
+    <div class="contentContainer">
+      <div class="content active">
+        <h1>Home</h1><br><br>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore ea explicabo ut sunt non incidunt ex quisquam soluta. Cumque possimus est rem optio expedita sit, illo assumenda iste voluptatem tenetur consequuntur amet saepe voluptates facilis, quia beatae explicabo maiores fugit. Dolorem mollitia eius eligendi omnis id obcaecati. Sed, commodi ratione. Quaerat praesentium corrupti inventore consequuntur voluptas pariatur hic excepturi ea deserunt cupiditate. Illo repudiandae dicta, facere labore quisquam itaque repellat perferendis quidem excepturi minima possimus accusamus, rerum unde eius, ipsa optio autem provident quis facilis! Omnis necessitatibus quidem consequuntur eveniet itaque dolor, explicabo quod hic minus quibusdam aut fugiat labore!</div>
+      <div class="content"><h1>About</h1><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi voluptatum molestias reiciendis delectus, perspiciatis tempora sint quo tenetur iste modi eius? Repellendus obcaecati harum iure quam dicta earum consequuntur neque rerum qui temporibus nam pariatur est debitis soluta nulla placeat explicabo quaerat repudiandae maxime omnis, delectus, quidem quos fugiat! Eius nihil ad maiores magni laboriosam. Est omnis voluptatibus asperiores! Debitis unde excepturi ad ex aliquam laboriosam ratione sapiente voluptates porro molestiae! Nemo aliquid reprehenderit accusamus, excepturi vel accusantium provident quasi? Repudiandae fugiat dolorum adipisci quo, in, iste iusto aspernatur officia quibusdam numquam quaerat rem doloremque beatae. Optio, quisquam reprehenderit.</div>
+      <div class="content"><h1>Contact</h1><br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim modi suscipit asperiores amet voluptatem fugit, voluptate mollitia nemo eveniet excepturi architecto vero. At eos porro placeat non dolorem veritatis consequuntur tempore ea suscipit esse, nam sed autem eius quo, soluta animi voluptas dolor. Minus tempore sequi dolorum quibusdam quas vitae ab unde debitis ut assumenda explicabo omnis recusandae magni nisi quis nemo, culpa, nulla eius optio adipisci aliquam. Deserunt temporibus esse, dolorum vel iusto officia nemo. Fugiat recusandae ex, quaerat quidem vitae laboriosam debitis repudiandae. Ea ex quasi, tempora, alias optio eligendi laboriosam quis, aliquam incidunt voluptatem molestias. Beatae, quo?</div>
+      <div class="content"><h1>Services</h1><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nihil quis ipsam dignissimos voluptatem adipisci nostrum! Sit deserunt ab veritatis quibusdam facilis laboriosam voluptatum voluptates tempora commodi, corrupti quas. Maiores nulla amet in non illum dolorum tenetur, cumque unde placeat asperiores nostrum! Nostrum, provident magni? Saepe debitis nobis at unde a suscipit adipisci vero laborum asperiores. Maiores fugiat nobis asperiores consectetur amet, deserunt rem, molestias maxime optio animi quidem! Cumque velit voluptas quos minima assumenda ab deserunt enim magnam? Exercitationem quis in reiciendis qui, ea sit, sequi nostrum nobis obcaecati, blanditiis facilis! Rerum fugiat assumenda exercitationem quaerat delectus nam earum.</div>
+    </div>
+  </div>
+  <script>
+    const tabs=document.querySelectorAll(".tabButton");
+    const contents=document.querySelectorAll(".content");
+    tabs.forEach((tab,index)=>{
+      tab.addEventListener("click",function(e){
+        tabs.forEach((content)=>{
+          content.classList.remove('active')
+        });
+        tab.classList.add('active');
+        contents.forEach((content)=>{
+          content.classList.remove('active')
+        });
+        contents[index].classList.add('active');
+        const line=document.querySelector(".line");
+        line.style.width=e.target.offsetWidth + "px";
+      
+        line.style.left=e.target.offsetLeft + "px";
+      })
+    })
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Basic Calculator</h2>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="calculator">
+          <input type="text" id="result" class="form-control mb-3" readonly>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-secondary btn-block" onclick="clearDisplay()">C</button></div>
+            <div class="col"><button class="btn btn-danger btn-block" onclick="removeLast()">DEL</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('/')">/</button></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('7')">7</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('8')">8</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('9')">9</button></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('4')">4</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('5')">5</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('6')">6</button></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('1')">1</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('2')">2</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('3')">3</button></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('0')">0</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('.')">.</button></div>
+            <div class="col"><button class="btn btn-success btn-block" onclick="calculate()">=</button></div>
+          </div>
+
+          <div class="row">
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('+')">+</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('-')">-</button></div>
+            <div class="col"><button class="btn btn-primary btn-block" onclick="appendValue('*')">*</button></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function appendValue(val) {
+      document.getElementById("result").value += val;
+    }
+
+    function clearDisplay() {
+      document.getElementById("result").value = "";
+    }
+
+    function removeLast() {
+      var currentValue = document.getElementById("result").value;
+      document.getElementById("result").value = currentValue.slice(0, -1);
+    }
+
+    function calculate() {
+      var expression = document.getElementById("result").value;
+      try {
+        var result = eval(expression);
+        document.getElementById("result").value = result;
+      } catch (error) {
+        document.getElementById("result").value = "Error";
+      }
+    }
+  </script>
+
+  <style>
+    .calculator {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .btn-block {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+
+</body>
+</html>

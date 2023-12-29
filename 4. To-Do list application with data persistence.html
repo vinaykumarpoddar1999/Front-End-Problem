@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List Application</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .task-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .task-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .task-item button {
+      margin-left: 10px;
+    }
+
+    .task-item.completed {
+      text-decoration: line-through;
+      background-color: #e9ecef;
+    }
+
+    .add-task-container {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .add-task-input {
+      flex: 1;
+      padding: 5px;
+    }
+
+    .btn-add-task {
+      flex: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="text-center">To-Do List</h2>
+    <ul class="task-list" id="task-list">
+      <!-- Tasks will be populated here -->
+    </ul>
+
+    <div class="add-task-container">
+      <input type="text" class="add-task-input" id="task-input" placeholder="Enter task">
+      <button class="btn btn-primary btn-add-task" onclick="addTask()">Add</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Load tasks from local storage on page load
+      loadTasks();
+    });
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      const taskList = document.getElementById("task-list");
+
+      // Clear the existing tasks
+      taskList.innerHTML = "";
+
+      tasks.forEach(task => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("task-item");
+
+        const checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.checked = task.completed;
+        checkbox.addEventListener("change", function() {
+          task.completed = this.checked;
+          updateLocalStorage(tasks);
+          updateUI();
+        });
+
+        const label = document.createElement("label");
+        label.innerText = task.title;
+        label.setAttribute("for", `task-${task.id}`);
+
+        const editButton = document.createElement("button");
+        editButton.innerText = "Edit";
+        editButton.classList.add("btn", "btn-primary");
+        editButton.addEventListener("click", function() {
+          const newTitle = prompt("Edit task:", task.title);
+          if (newTitle !== null && newTitle.trim() !== "") {
+            task.title = newTitle.trim();
+            updateLocalStorage(tasks);
+            updateUI();
+          }
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.classList.add("btn", "btn-danger");
+        deleteButton.addEventListener("click", function() {
+          const index = tasks.findIndex(item => item.id === task.id);
+          if (index !== -1) {
+            tasks.splice(index, 1);
+            updateLocalStorage(tasks);
+            updateUI();
+          }
+        });
+
+        listItem.appendChild(checkbox);
+        listItem.appendChild(label);
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+
+        if (task.completed) {
+          listItem.classList.add("completed");
+        }
+
+        taskList.appendChild(listItem);
+      });
+    }
+
+    function addTask() {
+      const inputField = document.getElementById("task-input");
+      const taskTitle = inputField.value.trim();
+
+      if (taskTitle !== "") {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        const newTask = {
+          id: Date.now(),
+          title: taskTitle,
+          completed: false,
+        };
+
+        tasks.push(newTask);
+        updateLocalStorage(tasks);
+        inputField.value = "";
+        updateUI();
+      }
+    }
+
+    function updateLocalStorage(tasks) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function updateUI() {
+      loadTasks();
+    }
+  </script>
+
+</body>
+</html>

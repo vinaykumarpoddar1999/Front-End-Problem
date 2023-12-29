@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePen Home
+Product / Image Gallery Filter By Vinay Kumar Poddar</title>
+</head>
+<body>
+    <style>
+.products{
+    display: flex;
+    gap:15px;
+    flex-wrap: wrap;
+}
+.product{
+    flex-grow: 1;
+    flex-basis: 300px;
+    height: 200px;
+    background-color:palegreen;
+}
+.product img{
+    width: 100%;
+    height: 150px;
+  
+    border-radius: 6px;
+}
+button{
+    background-color: white;
+    padding: 10px 20px;
+    color: #000;
+}
+.active{
+    background-color:blue;
+    color: white;
+}
+.product-name{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.hide{
+    display: none;
+}
+
+    </style>
+  <div class="filterbutton">
+  <button class="active" data-name="All">All</button>
+    <button data-name="Mobile">Mobile</button>
+    <button data-name="Books">Books</button>
+    <button data-name="Cloths">Cloths</button>
+  </div>
+  <div class="products">
+    <div class="product" data-name="Mobile">
+      <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" >
+      </div>
+      <div>
+        <h6 class="product-name">Mobile 1</h6>
+        </div>
+    </div>
+    <div class="product" data-name="Mobile">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" >
+        </div>
+        <div>
+          <h6 class="product-name">Mobile 2</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Mobile">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" >
+        </div>
+        <div>
+          <h6 class="product-name">Mobile 3</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Books">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" >
+        </div>
+        <div>
+          <h6 class="product-name">Books 1</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Books">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" >
+        </div>
+        <div>
+          <h6 class="product-name">Books 2</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Books">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" >
+        </div>
+        <div>
+          <h6 class="product-name">Books 3</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Cloths">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsb3RofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" >
+        </div>
+        <div>
+          <h6 class="product-name">Cloths 1</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Cloths">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsb3RofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" >
+        </div>
+        <div>
+          <h6 class="product-name">Cloths 2</h6>
+          </div>
+      </div>
+      <div class="product" data-name="Cloths">
+        <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsb3RofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" >
+        </div>
+        <div>
+          <h6 class="product-name">Cloths 3</h6>
+          </div>
+      </div>
+  </div>
+
+  <script>
+const filterbutton= document.querySelectorAll(".filterbutton button");
+console.log(filterbutton);
+const products=document.querySelectorAll(".products .product");
+console.log(products);
+function filterproduct(e){
+    filterbutton.forEach((button)=>{
+        button.classList.remove("active");
+    })
+    e.target.classList.add("active");
+    console.log(e.target)
+    
+    products.forEach((product)=>{
+        product.classList.add("hide");
+        if(product.dataset.name===e.target.dataset.name||e.target.dataset.name==="All"){
+            product.classList.remove("hide");
+        }
+    })
+}
+
+filterbutton.forEach(button => {button.addEventListener("click",filterproduct)})
+  </script>
+</body>
+</html>

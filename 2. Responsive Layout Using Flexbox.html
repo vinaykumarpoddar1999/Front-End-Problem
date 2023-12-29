@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Tutorial</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    /* Flexbox Examples */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .flex-item {
+      width: 300px;
+      height: 200px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .item-1 {
+      background-color: #007bff;
+    }
+
+    .item-2 {
+      background-color: #dc3545;
+    }
+
+    .item-3 {
+      background-color: #28a745;
+    }
+
+    .item-4 {
+      background-color: #ffc107;
+    }
+
+    .item-5 {
+      background-color: #17a2b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Flexbox Tutorial</h1>
+  </header>
+
+  <div class="container">
+    <h2>Example 1: Basic Flexbox Container</h2>
+    <div class="flex-container">
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-2">Item 2</div>
+      <div class="flex-item item-3">Item 3</div>
+    </div>
+
+    <h2>Example 2: Flex Direction and Order</h2>
+    <div class="flex-container">
+      <div class="flex-item item-4">Item 4</div>
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-2">Item 2</div>
+      <div class="flex-item item-3">Item 3</div>
+    </div>
+
+    <h2>Example 3: Flex Grow and Shrink</h2>
+    <div class="flex-container">
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-3" style="flex-grow: 2;">Item 3 (2x Grow)</div>
+      <div class="flex-item item-4">Item 4</div>
+    </div>
+
+    <h2>Example 4: Flex Basis and Wrap</h2>
+    <div class="flex-container">
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-2">Item 2</div>
+      <div class="flex-item item-3">Item 3</div>
+      <div class="flex-item item-4">Item 4</div>
+      <div class="flex-item item-5">Item 5</div>
+    </div>
+
+    <h2>Example 5: Align Items and Justify Content</h2>
+    <div class="flex-container" style="align-items: flex-end; justify-content: center;">
+      <div class="flex-item item-1">Item 1</div>
+      <div class="flex-item item-2">Item 2</div>
+      <div class="flex-item item-3">Item 3</div>
+      <div class="flex-item item-4">Item 4</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Grid Tutorial</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    /* Grid Examples */
+    .grid-container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-item {
+      height: 200px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .grid-template {
+      display: grid;
+      grid-template-columns: 100px 200px 1fr;
+      grid-template-rows: 100px 1fr;
+      grid-gap: 10px;
+      grid-template-areas:
+        "header header header"
+        "sidebar content content";
+    }
+
+    .grid-item-template {
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .grid-item-header {
+      grid-area: header;
+      background-color: #dc3545;
+    }
+
+    .grid-item-sidebar {
+      grid-area: sidebar;
+    }
+
+    .grid-item-content {
+      grid-area: content;
+    }
+
+    /* Grid Auto Fit */
+    .grid-auto-fit-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+    }
+
+    .grid-auto-fit-item {
+      height: 150px;
+      background-color: #ffc107;
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Grid Justify Content */
+    .grid-justify-content-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
+      justify-content: space-between;
+    }
+
+    .grid-justify-content-item {
+      height: 150px;
+      background-color: #17a2b8;
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CSS Grid Tutorial</h1>
+  </header>
+
+  <div class="container">
+    <h2>Example 1: Basic Grid Container</h2>
+    <div class="grid-container">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+    </div>
+
+    <h2>Example 2: Grid Template and Areas</h2>
+    <div class="grid-template">
+      <div class="grid-item-template grid-item-header">Header</div>
+      <div class="grid-item-template grid-item-sidebar">Sidebar</div>
+      <div class="grid-item-template grid-item-content">Content</div>
+    </div>
+
+    <h2>Example 3: Grid Auto Fit</h2>
+    <div class="grid-auto-fit-container">
+      <div class="grid-auto-fit-item">Item 1</div>
+      <div class="grid-auto-fit-item">Item 2</div>
+      <div class="grid-auto-fit-item">Item 3</div>
+      <div class="grid-auto-fit-item">Item 4</div>
+      <div class="grid-auto-fit-item">Item 5</div>
+      <div class="grid-auto-fit-item">Item 6</div>
+      <div class="grid-auto-fit-item">Item 7</div>
+    </div>
+
+    <h2>Example 4: Grid Justify Content</h2>
+    <div class="grid-justify-content-container">
+      <div class="grid-justify-content-item">Item 1</div>
+      <div class="grid-justify-content-item">Item 2</div>
+      <div class="grid-justify-content-item">Item 3</div>
+      <div class="grid-justify-content-item">Item 4</div>
+      <div class="grid-justify-content-item">Item 5</div>
+      <div class="grid-justify-content-item">Item 6</div>
+    </div>
+  </div>
+
+</body>
+</html>

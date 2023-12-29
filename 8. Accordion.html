@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Accordion For FAQ by Vinay Kumar Poddar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background: #E3F2FD;
+        }
+
+        .container {
+            width: 50%;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: 5px #ccc;
+            background-color: rgb(245, 183, 242);
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+
+        }
+
+        .accordion {
+            padding: 10px;
+            background-color: #ac33f3;
+            border-radius: 6px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .plus {
+            font-size: 22px;
+            font-weight: bold;
+            width: 10%;
+            color: #fff;
+            float: right;
+        }
+
+        .plus.active {
+            transform: rotate(45deg)
+        }
+
+        .answer p {
+            color: #fff;
+            font-size: 12px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .answer {
+            display: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .answer.active {
+            display: block;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .question {
+            width: 90%;
+        }
+    </style>
+    <h1>Accordion For FAQ by Vinay Kumar Poddar</h1>
+    <div class="container">
+        <div class="accordion">
+            <div class="flex">
+                <div class="question">
+                    <h2> 1. Name and describe about your dream company?</h2>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="answer">
+                <p class="answerP">1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laborum,
+                    sed voluptatibus ipsum natus alias est voluptas modi, deserunt molestias, qui saepe eum cum culpa
+                    impedit possimus quod? Fugiat hic eligendi molestias pariatur, repellendus beatae officia ipsam
+                    nulla nesciunt autem quidem nobis recusandae corrupti amet placeat esse odit, a quaerat labore
+                    molestiae perspiciatis repellat obcaecati odio assumenda. Totam recusandae alias nisi quidem rem
+                    exercitationem, vel magni ut. Quae neque earum delectus voluptatem laboriosam laborum. Doloribus
+                    optio ex sequi in tenetur unde mollitia architecto beatae omnis exercitationem! Et ullam earum illum
+                    officiis commodi nesciunt, vel corporis veritatis nam pariatur esse voluptatibus.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="flex">
+                <div class="question">
+                    <h2>2. Name and describe about your dream company?</h2>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="answer">
+                <p class="answerP">2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laborum,
+                    sed voluptatibus ipsum natus alias est voluptas modi, deserunt molestias, qui saepe eum cum culpa
+                    impedit possimus quod? Fugiat hic eligendi molestias pariatur, repellendus beatae officia ipsam
+                    nulla nesciunt autem quidem nobis recusandae corrupti amet placeat esse odit, a quaerat labore
+                    molestiae perspiciatis repellat obcaecati odio assumenda. Totam recusandae alias nisi quidem rem
+                    exercitationem, vel magni ut. Quae neque earum delectus voluptatem laboriosam laborum. Doloribus
+                    optio ex sequi in tenetur unde mollitia architecto beatae omnis exercitationem! Et ullam earum illum
+                    officiis commodi nesciunt, vel corporis veritatis nam pariatur esse voluptatibus.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="flex">
+                <div class="question">
+                    <h2>3. Name and describe about your dream company?</h2>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="answer">
+                <p class="answerP">3. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laborum,
+                    sed voluptatibus ipsum natus alias est voluptas modi, deserunt molestias, qui saepe eum cum culpa
+                    impedit possimus quod? Fugiat hic eligendi molestias pariatur, repellendus beatae officia ipsam
+                    nulla nesciunt autem quidem nobis recusandae corrupti amet placeat esse odit, a quaerat labore
+                    molestiae perspiciatis repellat obcaecati odio assumenda. Totam recusandae alias nisi quidem rem
+                    exercitationem, vel magni ut. Quae neque earum delectus voluptatem laboriosam laborum. Doloribus
+                    optio ex sequi in tenetur unde mollitia architecto beatae omnis exercitationem! Et ullam earum illum
+                    officiis commodi nesciunt, vel corporis veritatis nam pariatur esse voluptatibus.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="flex">
+                <div class="question">
+                    <h2>4. Name and describe about your dream company?</h2>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="answer">
+                <p class="answerP">4. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laborum,
+                    sed voluptatibus ipsum natus alias est voluptas modi, deserunt molestias, qui saepe eum cum culpa
+                    impedit possimus quod? Fugiat hic eligendi molestias pariatur, repellendus beatae officia ipsam
+                    nulla nesciunt autem quidem nobis recusandae corrupti amet placeat esse odit, a quaerat labore
+                    molestiae perspiciatis repellat obcaecati odio assumenda. Totam recusandae alias nisi quidem rem
+                    exercitationem, vel magni ut. Quae neque earum delectus voluptatem laboriosam laborum. Doloribus
+                    optio ex sequi in tenetur unde mollitia architecto beatae omnis exercitationem! Et ullam earum illum
+                    officiis commodi nesciunt, vel corporis veritatis nam pariatur esse voluptatibus.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const accordion=document.querySelectorAll('.accordion');
+        const answers=document.querySelectorAll('.answer');
+        const plus=document.querySelectorAll('.plus');
+        accordion.forEach((accord,index)=>{
+            accord.addEventListener('click',function(e){
+                answers.forEach((answer)=>{
+                if (answer !=answers[index])
+                    answer.classList.remove('active')
+                });
+                plus.forEach((pl)=>{
+                    if (pl !=plus[index])
+                    pl.classList.remove('active')
+                });
+                answers[index].classList.toggle('active');
+                plus[index].classList.toggle('active');
+            })
+        })
+
+    </script>
+</body>
+
+</html>
